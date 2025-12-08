@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hotel Sai Leela | Premium Stay in Kokar Ranchi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#ecfdf5",
+                100: "#d1fae5",
+                500: "#10b981",
+                600: "#059669",
+                700: "#047857",
+              },
+            },
+            boxShadow: {
+              soft: "0 18px 45px rgba(15,23,42,0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --scrollbar-color-bg: #0f172a;
+        --muted-foreground: 226 100% 87%;
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--muted-foreground)) var(--scrollbar-color-bg);
+      }
+
+      *::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: var(--scrollbar-color-bg);
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #f59e0b, #fbbf24);
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased scroll-smooth">
+    <!-- NAVBAR -->
+    <header
+      class="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-3 flex items-center justify-between"
+      >
+        <!-- Brand logo goes back to home -->
+        <a href="index.html" class="flex items-center gap-2">
+          <span
+            class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white font-semibold shadow-soft"
+          >
+            SL
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-sm md:text-base tracking-tight">
+              Hotel Sai Leela
+            </p>
+            <p class="text-[11px] text-slate-500">
+              Kokar Ranchi · Near Railway Station
+            </p>
+          </div>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm"
+        >
+          <span>Menu</span>
+          <svg
+            id="iconOpen"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            id="iconClose"
+            class="h-4 w-4 hidden"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Desktop nav -->
+        <nav
+          id="navMenu"
+          class="hidden md:flex items-center gap-6 text-xs md:text-sm"
+        >
+          <a href="index.html" class="text-brand-600 font-semibold">Home</a>
+          <a href="about.html" class="text-slate-600 hover:text-brand-600"
+            >About</a
+          >
+          <a href="rooms.html" class="text-slate-600 hover:text-brand-600"
+            >Rooms</a
+          >
+          <a href="blog.html" class="text-slate-600 hover:text-brand-600"
+            >Blog</a
+          >
+          <a href="contact.html" class="text-slate-600 hover:text-brand-600"
+            >Contact</a
+          >
+          <!-- Book now should go to contact or dedicated booking page -->
+          <a
+            href="contact.html"
+            class="ml-2 inline-flex items-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+          >
+            Book Now
+          </a>
+        </nav>
+      </div>
+
+      <!-- Mobile nav -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-slate-100 bg-white/95 backdrop-blur"
+      >
+        <nav class="px-4 py-4 flex flex-col gap-3 text-sm">
+          <a href="index.html" class="text-brand-600 font-semibold">Home</a>
+          <a href="about.html" class="text-slate-700 hover:text-brand-600"
+            >About</a
+          >
+          <a href="rooms.html" class="text-slate-700 hover:text-brand-600"
+            >Rooms</a
+          >
+          <a href="blog.html" class="text-slate-700 hover:text-brand-600"
+            >Blog</a
+          >
+          <a href="contact.html" class="text-slate-700 hover:text-brand-600"
+            >Contact</a
+          >
+          <a
+            href="contact.html"
+            class="mt-1 inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+          >
+            Book Now
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="pt-16 md:pt-20">
+      <!-- HERO (home-only) -->
+      <section id="hero" class="relative overflow-hidden h-screen md:h-auto">
+        <div class="h-[520px] md:h-[560px] lg:h-[600px] bg-slate-900">
+          <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80')] bg-cover bg-center"
+          ></div>
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-slate-900/40"
+          ></div>
+
+          <div
+            class="relative max-w-6xl h-full mx-auto px-4 lg:px-6 pt-10 md:pt-12 flex flex-col md:flex-row items-center gap-10"
+          >
+            <div class="max-w-lg lg:max-w-xl text-white">
+              <p
+                class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium tracking-wide border border-white/20"
+              >
+                <span
+                  class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"
+                ></span>
+                Kokar Ranchi · 5 min from Railway Station
+              </p>
+              <h1
+                class="mt-4 text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight"
+              >
+                A calm, clean stay for your Kokar visit.
+              </h1>
+              <p class="mt-4 text-sm md:text-base text-slate-200 max-w-lg">
+                Modern rooms, friendly staff, and easy access to temple, transit
+                and markets—perfect for family trips and short business visits.
+              </p>
+              <div class="mt-6 flex flex-wrap items-center gap-3">
+                <!-- Primary CTA goes to contact page -->
+                <a
+                  href="contact.html"
+                  class="inline-flex items-center justify-center rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-emerald-900/40 hover:bg-brand-700 transition"
+                >
+                  Check Availability
+                </a>
+                <!-- Secondary CTA goes to rooms page -->
+                <a
+                  href="rooms.html"
+                  class="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-2.5 text-sm font-semibold text-white/90 hover:bg-white/10 transition"
+                >
+                  View Rooms
+                </a>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-4 text-xs text-slate-200/90">
+                <div class="flex items-center gap-2">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Free Wi-Fi
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  24×7 Front Desk
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  AC & Non-AC Rooms
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero mini booking card -->
+            <div class="w-full md:w-80 lg:w-96 mt-2 md:mt-0">
+              <div
+                class="rounded-2xl bg-white/95 text-slate-900 shadow-soft p-5 space-y-4"
+              >
+                <p class="text-xs font-semibold text-slate-500 uppercase">
+                  Quick enquiry
+                </p>
+                <p class="text-sm text-slate-700">
+                  Share your dates and guest count on WhatsApp. Our team will
+                  respond with room options.
+                </p>
+                <div class="space-y-2">
+                  <a
+                    href="tel:+919112345678"
+                    class="block w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm font-semibold hover:border-brand-500 hover:text-brand-700 transition"
+                  >
+                    📞 Call: +91 91123 45678
+                  </a>
+                  <a
+                    href="https://wa.me/911234567890?text=Hi%20I%20want%20to%20check%20room%20availability%20at%20Hotel%20Sai%20Leela"
+                    class="block w-full rounded-lg bg-brand-600 px-3 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition"
+                  >
+                    💬 WhatsApp Enquiry
+                  </a>
+                </div>
+                <p class="text-[11px] text-slate-500">
+                  No payment needed to enquire. Pay at property after
+                  confirmation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS (home-only) -->
+      <section class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16">
+        <div
+          class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8"
+        >
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+              Why guests like Sai Leela
+            </h2>
+            <p class="mt-1 text-sm text-slate-600">
+              The three things guests mention most often in their feedback.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500">
+            Simple facilities · Clean rooms · Helpful staff
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition"
+          >
+            <p class="text-[11px] font-semibold text-brand-600 uppercase">
+              Location
+            </p>
+            <h3 class="mt-2 font-semibold text-lg tracking-tight">
+              Near station & temple
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              5–7 minutes from railway station and easy cab access for temple
+              and markets, avoiding long city travel.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition"
+          >
+            <p class="text-[11px] font-semibold text-brand-600 uppercase">
+              Comfort
+            </p>
+            <h3 class="mt-2 font-semibold text-lg tracking-tight">
+              Clean & practical rooms
+            </h3>
+            <p class="mt-2 text-sm text-slate-600">
+              AC / Non-AC, hot water, free Wi-Fi and daily housekeeping—no
+              clutter, just what you really need.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition"
+          >
+            <p class="text-[11px] font-semibold text-brand-600 uppercase">
+              Support
+            </p>
+            <h3 class="mt-2 font-semibold text-lg tracking-tight">24×7 help</h3>
+            <p class="mt-2 text-sm text-slate-600">
+              Friendly front desk to help with early check-ins, cabs, directions
+              and basic travel guidance.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROOMS PREVIEW (links to rooms.html) -->
+      <section class="bg-white border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div>
+              <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+                Rooms for different stays
+              </h2>
+              <p class="text-sm text-slate-600 mt-1">
+                Choose a room that matches your budget and comfort level.
+              </p>
+            </div>
+            <a
+              href="rooms.html"
+              class="hidden md:inline-flex text-sm text-brand-600 font-semibold hover:text-brand-700"
+            >
+              View all rooms →
+            </a>
+          </div>
+          <div class="grid md:grid-cols-3 gap-6">
+            <!-- Deluxe -->
+            <article
+              class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:border-brand-200 hover:shadow-md hover:-translate-y-0.5 transition"
+            >
+              <div class="relative h-40">
+                <div
+                  class="absolute inset-0 bg-[url('https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg')] bg-cover bg-center group-hover:scale-[1.03] transition-transform"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent"
+                ></div>
+                <span
+                  class="absolute top-3 left-3 inline-flex items-center rounded-full bg-brand-600/90 px-2.5 py-1 text-[10px] font-semibold text-white"
+                >
+                  Popular choice
+                </span>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-sm md:text-base">
+                  Deluxe AC Room
+                </h3>
+                <p class="mt-1 text-xs text-slate-500">
+                  2 guests · King bed · Attached bathroom
+                </p>
+                <p class="mt-3 text-sm font-semibold text-brand-600">
+                  From ₹2,499 / night
+                </p>
+              </div>
+            </article>
+
+            <!-- Economy -->
+            <article
+              class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:border-brand-200 hover:shadow-md hover:-translate-y-0.5 transition"
+            >
+              <div class="relative h-40">
+                <div
+                  class="absolute inset-0 bg-[url('https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg')] bg-cover bg-center group-hover:scale-[1.03] transition-transform"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent"
+                ></div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-sm md:text-base">
+                  Non-AC Economy Room
+                </h3>
+                <p class="mt-1 text-xs text-slate-500">
+                  2 guests · Simple & budget-friendly
+                </p>
+                <p class="mt-3 text-sm font-semibold text-brand-600">
+                  From ₹1,299 / night
+                </p>
+              </div>
+            </article>
+
+            <!-- Family -->
+            <article
+              class="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-100 hover:border-brand-200 hover:shadow-md hover:-translate-y-0.5 transition"
+            >
+              <div class="relative h-40">
+                <div
+                  class="absolute inset-0 bg-[url('https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg')] bg-cover bg-center group-hover:scale-[1.03] transition-transform"
+                ></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent"
+                ></div>
+              </div>
+              <div class="p-4">
+                <h3 class="font-semibold text-sm md:text-base">Family Room</h3>
+                <p class="mt-1 text-xs text-slate-500">
+                  3–4 guests · Extra bed available
+                </p>
+                <p class="mt-3 text-sm font-semibold text-brand-600">
+                  From ₹3,499 / night
+                </p>
+              </div>
+            </article>
+          </div>
+          <a
+            href="rooms.html"
+            class="mt-6 inline-flex md:hidden text-sm text-brand-600 font-semibold hover:text-brand-700"
+          >
+            View all rooms →
+          </a>
+        </div>
+      </section>
+
+      <!-- AMENITIES SECTION -->
+      <section
+        id="amenities"
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16"
+      >
+        <div
+          class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8"
+        >
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+              Amenities that actually matter
+            </h2>
+            <p class="mt-1 text-sm text-slate-600">
+              Simple facilities focused on a comfortable and safe stay.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500">
+            No unnecessary extras · Just essentials done right
+          </p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-5 text-sm">
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🛏️</span>
+            <p class="font-semibold">Comfortable bedding</p>
+            <p class="text-xs text-slate-600">
+              Clean linen and practical furniture for restful sleep.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">📶</span>
+            <p class="font-semibold">Free Wi-Fi</p>
+            <p class="text-xs text-slate-600">
+              Wi-Fi access suitable for work calls and browsing.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🚿</span>
+            <p class="font-semibold">Hot water</p>
+            <p class="text-xs text-slate-600">
+              Hot & cold water in attached bathrooms.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🅿️</span>
+            <p class="font-semibold">Parking (limited)</p>
+            <p class="text-xs text-slate-600">
+              Subject to availability, with easy street access.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🕒</span>
+            <p class="font-semibold">Flexible check-in</p>
+            <p class="text-xs text-slate-600">
+              Early check-in / late check-out on prior request.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🥪</span>
+            <p class="font-semibold">Nearby food options</p>
+            <p class="text-xs text-slate-600">
+              Access to local restaurants and tiffin services.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🔐</span>
+            <p class="font-semibold">Safe environment</p>
+            <p class="text-xs text-slate-600">
+              Family-friendly and suitable for solo travellers.
+            </p>
+          </div>
+          <div
+            class="bg-white rounded-2xl border border-slate-100 p-4 flex flex-col gap-2"
+          >
+            <span class="text-xl">🚕</span>
+            <p class="font-semibold">Cab assistance</p>
+            <p class="text-xs text-slate-600">
+              Help in arranging autos / cabs when needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCATION & MAP -->
+      <section id="location" class="bg-white border-y border-slate-100">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+                Easy to reach, easy to move around
+              </h2>
+              <p class="mt-2 text-sm text-slate-600">
+                Located in Kokar, Ranchi, with quick access to main roads and
+                public transport.
+              </p>
+              <div class="mt-5 space-y-3 text-sm text-slate-700">
+                <div>
+                  <p class="font-semibold">Hotel Sai Leela</p>
+                  <p class="text-slate-600 text-xs">
+                    Example Lane, Kokar,<br />
+                    Ranchi, Jharkhand.
+                  </p>
+                </div>
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• ~5–10 minutes from Ranchi Railway Station</li>
+                  <li>• Easy cab / auto access</li>
+                  <li>• Nearby shops, eateries and essentials</li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 h-64 md:h-72"
+            >
+              <!-- Replace src with real Google Maps embed later -->
+              <iframe
+                title="Hotel Sai Leela Location Map"
+                class="w-full h-full"
+                style="border: 0"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14670.916!2d85.343!3d23.370!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHotel!5e0!3m2!1sen!2sin!4v1700000000000"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS / TESTIMONIALS -->
+      <section
+        id="reviews"
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16"
+      >
+        <div
+          class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8"
+        >
+          <div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+              What guests usually say
+            </h2>
+            <p class="mt-1 text-sm text-slate-600">
+              Short, honest feedback from regular travellers and families.
+            </p>
+          </div>
+          <p class="text-xs text-slate-500">
+            Reviews can be synced from Google listing later
+          </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 text-sm">
+          <article
+            class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm"
+          >
+            <p class="text-xs text-amber-500 mb-1">★★★★★</p>
+            <p class="text-slate-700">
+              “Rooms are clean and staff is polite. Good place if you just need
+              a simple and safe stay near the city.”
+            </p>
+            <p class="mt-3 text-xs text-slate-500">Frequent business visitor</p>
+          </article>
+          <article
+            class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm"
+          >
+            <p class="text-xs text-amber-500 mb-1">★★★★☆</p>
+            <p class="text-slate-700">
+              “Stayed with family for a function. Easy to reach, basic amenities
+              in place and no issues with check-in.”
+            </p>
+            <p class="mt-3 text-xs text-slate-500">Family guest</p>
+          </article>
+          <article
+            class="bg-white rounded-2xl border border-slate-100 p-5 shadow-sm"
+          >
+            <p class="text-xs text-amber-500 mb-1">★★★★★</p>
+            <p class="text-slate-700">
+              “Good value for money. Wi-Fi and hot water worked fine. Staff
+              helped with cab arrangements.”
+            </p>
+            <p class="mt-3 text-xs text-slate-500">Solo traveller</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section id="faq" class="bg-slate-900 text-slate-100">
+        <div class="max-w-6xl mx-auto px-4 lg:px-6 py-12 md:py-16">
+          <div class="mb-8">
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight">
+              Frequently asked questions
+            </h2>
+            <p class="mt-1 text-sm text-slate-300">
+              A few common doubts guests usually ask before booking.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6 text-sm">
+            <div class="space-y-4">
+              <div
+                class="bg-slate-800/60 border border-slate-700 rounded-2xl p-4"
+              >
+                <p class="font-semibold">Do you allow early check-in?</p>
+                <p class="mt-1 text-slate-300 text-xs">
+                  Early check-in is possible based on room availability. You can
+                  confirm timing over call or WhatsApp.
+                </p>
+              </div>
+              <div
+                class="bg-slate-800/60 border border-slate-700 rounded-2xl p-4"
+              >
+                <p class="font-semibold">
+                  Is online advance payment mandatory?
+                </p>
+                <p class="mt-1 text-slate-300 text-xs">
+                  For busy dates we may request a small advance to confirm your
+                  room. For normal days, pay at property is also possible.
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="bg-slate-800/60 border border-slate-700 rounded-2xl p-4"
+              >
+                <p class="font-semibold">Is the hotel suitable for families?</p>
+                <p class="mt-1 text-slate-300 text-xs">
+                  Yes, we regularly host families and small groups. Rooms are
+                  simple, clean and monitored.
+                </p>
+              </div>
+              <div
+                class="bg-slate-800/60 border border-slate-700 rounded-2xl p-4"
+              >
+                <p class="font-semibold">
+                  Can you help with cabs or local guidance?
+                </p>
+                <p class="mt-1 text-slate-300 text-xs">
+                  Our front desk can help you with basic directions and
+                  arranging local autos / cabs when required.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="bg-brand-700">
+        <div
+          class="max-w-6xl mx-auto px-4 lg:px-6 py-10 text-white flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div>
+            <h2 class="text-lg md:text-xl font-semibold tracking-tight">
+              Ready to plan your stay at Sai Leela?
+            </h2>
+            <p class="text-sm text-emerald-100 mt-1">
+              Send a quick WhatsApp message with your dates and guest count. We
+              respond as soon as possible.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://wa.me/911234567890?text=Hi%20I%20want%20to%20check%20room%20availability%20at%20Hotel%20Sai%20Leela"
+              class="px-5 py-2 rounded-full bg-white text-brand-700 text-sm font-semibold shadow-sm hover:bg-slate-50 transition"
+            >
+              WhatsApp Enquiry
+            </a>
+            <a
+              href="contact.html"
+              class="px-5 py-2 rounded-full border border-white/80 text-sm font-semibold hover:bg-white/10 transition"
+            >
+              Contact Form
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-300 text-xs md:text-sm">
+      <div
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-2"
+      >
+        <p>© <span id="year"></span> Hotel Sai Leela. All rights reserved.</p>
+        <p class="text-[11px] text-slate-500">
+          Website demo design by
+          <span class="font-semibold text-slate-300">ECODRIX</span>.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav
+      const btn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
+
+      if (btn && mobileMenu) {
+        btn.addEventListener("click", () => {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          iconOpen.classList.toggle("hidden", isOpen);
+          iconClose.classList.toggle("hidden", !isOpen);
+        });
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            iconOpen.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+          });
+        });
+      }
+
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

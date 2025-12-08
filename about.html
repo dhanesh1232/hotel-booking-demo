@@ -1,0 +1,328 @@
+<!-- ===========================
+   about.html (ABOUT)
+   =========================== -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About – Hotel Sai Leela, Kokar Ranchi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              brand: {
+                50: "#ecfdf5",
+                100: "#d1fae5",
+                500: "#10b981",
+                600: "#059669",
+                700: "#047857",
+              },
+            },
+            boxShadow: {
+              soft: "0 18px 45px rgba(15,23,42,0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --scrollbar-color-bg: #0f172a;
+        --muted-foreground: 226 100% 87%;
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: hsl(var(--muted-foreground)) var(--scrollbar-color-bg);
+      }
+
+      *::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: var(--scrollbar-color-bg);
+      }
+
+      *::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #f59e0b, #fbbf24);
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <!-- HEADER (same as index, with About active) -->
+    <header
+      class="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-3 flex items-center justify-between"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <span
+            class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white font-semibold shadow-soft"
+          >
+            SL
+          </span>
+          <div class="leading-tight">
+            <p class="font-semibold text-sm md:text-base tracking-tight">
+              Hotel Sai Leela
+            </p>
+            <p class="text-[11px] text-slate-500">
+              Kokar Ranchi · Near Railway Station
+            </p>
+          </div>
+        </a>
+
+        <button
+          id="mobileMenuBtn"
+          class="md:hidden inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm"
+        >
+          <span>Menu</span>
+          <svg
+            id="iconOpen"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg
+            id="iconClose"
+            class="h-4 w-4 hidden"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <nav
+          id="navMenu"
+          class="hidden md:flex items-center gap-6 text-xs md:text-sm"
+        >
+          <a href="index.html" class="text-slate-600 hover:text-brand-600"
+            >Home</a
+          >
+          <a href="about.html" class="text-brand-600 font-semibold">About</a>
+          <a href="rooms.html" class="text-slate-600 hover:text-brand-600"
+            >Rooms</a
+          >
+          <a href="blog.html" class="text-slate-600 hover:text-brand-600"
+            >Blog</a
+          >
+          <a href="contact.html" class="text-slate-600 hover:text-brand-600"
+            >Contact</a
+          >
+          <a
+            href="contact.html"
+            class="ml-2 inline-flex items-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+          >
+            Book Now
+          </a>
+        </nav>
+      </div>
+
+      <!-- Mobile -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden border-t border-slate-100 bg-white/95 backdrop-blur"
+      >
+        <nav class="px-4 py-4 flex flex-col gap-3 text-sm">
+          <a href="index.html" class="text-slate-700 hover:text-brand-600"
+            >Home</a
+          >
+          <a href="about.html" class="text-brand-600 font-semibold">About</a>
+          <a href="rooms.html" class="text-slate-700 hover:text-brand-600"
+            >Rooms</a
+          >
+          <a href="blog.html" class="text-slate-700 hover:text-brand-600"
+            >Blog</a
+          >
+          <a href="contact.html" class="text-slate-700 hover:text-brand-600"
+            >Contact</a
+          >
+          <a
+            href="contact.html"
+            class="mt-1 inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
+          >
+            Book Now
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="pt-24 md:pt-28 pb-16">
+      <section class="max-w-6xl mx-auto px-4 lg:px-6">
+        <!-- Page intro -->
+        <div class="mb-10">
+          <p
+            class="text-xs font-semibold text-brand-600 uppercase tracking-wide"
+          >
+            About Us
+          </p>
+          <h1 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
+            A simple, honest stay in Kokar.
+          </h1>
+          <p class="mt-3 text-sm md:text-base text-slate-600 max-w-2xl">
+            Hotel Sai Leela is a small, family-friendly hotel built around three
+            values: cleanliness, calm stay, and straightforward service—so you
+            can focus on your visit, not your room.
+          </p>
+        </div>
+
+        <!-- Two-column story + highlights -->
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <!-- Story -->
+          <div class="space-y-4 text-sm leading-relaxed text-slate-700">
+            <p>
+              Sai Leela was started with a simple thought: most guests coming to
+              Kokar Ranchi don’t need luxury—they just need a clean, safe, and
+              peaceful place to rest between travel and darshan.
+            </p>
+            <p>
+              Instead of adding heavy decor and hidden charges, we focus on
+              basics done right: fresh beds, working AC, hot water, Wi‑Fi, and a
+              team that genuinely tries to help with timings, local guidance and
+              small requests.
+            </p>
+            <p>
+              Over the years, we’ve hosted families, working professionals, solo
+              travellers and small groups who prefer a practical stay near the
+              station and temple, without confusion on rates or facilities.
+            </p>
+            <p>
+              This website is a simple extension of that same approach—clear
+              information, no over-promising, and an easy way to connect with
+              our team before you book.
+            </p>
+          </div>
+
+          <!-- Card with key points / stats -->
+          <div
+            class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-5 text-sm"
+          >
+            <h2 class="font-semibold text-lg mb-1">What you can expect here</h2>
+            <ul class="space-y-2 text-slate-700">
+              <li>
+                • Walkable / short-ride distance from main transport points
+              </li>
+              <li>• AC / Non‑AC rooms with daily housekeeping</li>
+              <li>• 24×7 front desk support for check‑ins and basic queries</li>
+              <li>• Nearby food, tea/coffee and cab/auto options</li>
+              <li>• Straightforward communication over call or WhatsApp</li>
+            </ul>
+
+            <div
+              class="border-t border-slate-100 pt-4 grid grid-cols-3 gap-3 text-xs"
+            >
+              <div>
+                <p class="text-[11px] text-slate-500 uppercase">
+                  Guests hosted
+                </p>
+                <p class="mt-1 font-semibold text-slate-900">1,000+ (demo)</p>
+              </div>
+              <div>
+                <p class="text-[11px] text-slate-500 uppercase">
+                  Primary purpose
+                </p>
+                <p class="mt-1 font-semibold text-slate-900">
+                  Darshan & work trips
+                </p>
+              </div>
+              <div>
+                <p class="text-[11px] text-slate-500 uppercase">Focus areas</p>
+                <p class="mt-1 font-semibold text-slate-900">
+                  Cleanliness & support
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Who we are for / not for -->
+        <section class="mt-12 grid md:grid-cols-2 gap-8 text-sm">
+          <div class="bg-white rounded-2xl border border-slate-100 p-6">
+            <h2 class="font-semibold text-base mb-2">
+              Who finds Sai Leela useful
+            </h2>
+            <ul class="space-y-1 text-slate-700">
+              <li>• Families visiting Kokar for 1–3 days</li>
+              <li>• Working professionals needing a quiet night stay</li>
+              <li>• Small groups looking for simple, nearby rooms</li>
+              <li>• Travellers who prefer clarity over heavy marketing</li>
+            </ul>
+          </div>
+          <div class="bg-slate-900 rounded-2xl text-slate-100 p-6">
+            <h2 class="font-semibold text-base mb-2">
+              What we are not trying to be
+            </h2>
+            <ul class="space-y-1 text-slate-200/90">
+              <li>• Not a luxury resort with pool or spa</li>
+              <li>• Not a large banquet / event property</li>
+              <li>• Not focused on grand interiors or heavy add‑ons</li>
+              <li>• Instead, a small, calm, value‑for‑money stay</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-300 text-xs md:text-sm">
+      <div
+        class="max-w-6xl mx-auto px-4 lg:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-2"
+      >
+        <p>© <span id="year"></span> Hotel Sai Leela. All rights reserved.</p>
+        <p class="text-[11px] text-slate-500">
+          Website demo design by
+          <span class="font-semibold text-slate-300">ECODRIX</span>.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav
+      const btn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const iconOpen = document.getElementById("iconOpen");
+      const iconClose = document.getElementById("iconClose");
+
+      if (btn && mobileMenu) {
+        btn.addEventListener("click", () => {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden");
+          iconOpen.classList.toggle("hidden", isOpen);
+          iconClose.classList.toggle("hidden", !isOpen);
+        });
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            iconOpen.classList.remove("hidden");
+            iconClose.classList.add("hidden");
+          });
+        });
+      }
+
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
