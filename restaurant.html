@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalinga Restaurant | A1 Heaven Visakhapatnam</title>
+    <meta name="description" content="Savor authentic ethnic flavors at Kalinga Restaurant, A1 Heaven. From signature Potlam Biryani to coastal seafood, experience the best dining in Vizag.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#ea580c',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-navy-900 font-sans antialiased">
+
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform group-hover:scale-110">A1</div>
+                <div>
+                    <h1 class="text-lg font-display font-bold leading-none uppercase tracking-tight">A1 HEAVEN</h1>
+                    <p class="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Luxury · Vizag</p>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="restaurant.html" class="nav-link active">Kalinga Restaurant</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="btn btn-accent translate-x-4">Book Reservation</a>
+            </nav>
+
+            <!-- Mobile Menu Btn -->
+            <button id="mobileMenuBtn" class="lg:hidden p-2 text-navy-900 hover:bg-slate-100 rounded-full transition-colors">
+                <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Overlay -->
+        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white border-b border-border p-6 flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="text-lg font-bold py-2 border-b border-slate-50">Home Experience</a>
+            <a href="rooms.html" class="text-lg font-bold py-2 border-b border-slate-50">Luxury Rooms</a>
+            <a href="restaurant.html" class="text-lg font-bold py-2 border-b border-slate-50 text-brand-600">Kalinga Restaurant</a>
+            <a href="about.html" class="text-lg font-bold py-2 border-b border-slate-50">The A1 Story</a>
+            <a href="contact.html" class="btn btn-accent w-full mt-4">Inquire Booking</a>
+        </div>
+    </header>
+
+    <main class="pt-32">
+        <!-- Hero -->
+        <section class="container mb-24 relative h-[600px] overflow-hidden rounded-[80px] shadow-premium group">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1600&q=80" alt="Restaurant Interior" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-center justify-center text-center">
+                <div class="max-w-4xl px-6 animate-fade-in-up">
+                    <span class="text-brand-500 font-black uppercase tracking-[0.4em] text-sm mb-4 inline-block">The Soul of Vizag Dining</span>
+                    <h2 class="text-7xl md:text-9xl font-display font-black text-white mt-2 drop-shadow-2xl italic tracking-tighter">KALINGA</h2>
+                    <p class="text-slate-200 mt-8 text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-medium">A culinary journey through time. From heritage spices to coastal masterpieces, experience the pinnacle of ethnic dining at A1 Heaven.</p>
+                </div>
+            </div>
+            <!-- Floating Stats -->
+            <div class="absolute bottom-10 left-10 md:left-20 flex gap-8 md:gap-12 text-white">
+                <div class="text-left border-l-2 border-brand-500 pl-4">
+                    <p class="text-3xl font-display font-black leading-none">4.9</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest opacity-80 mt-1">Guest Rating</p>
+                </div>
+                <div class="text-left border-l-2 border-brand-500 pl-4">
+                    <p class="text-3xl font-display font-black leading-none">14+</p>
+                    <p class="text-[10px] font-black uppercase tracking-widest opacity-80 mt-1">Heritage Spices</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Navigation (Tabs) -->
+        <section class="container mb-24 overflow-x-auto">
+            <div class="flex flex-nowrap md:justify-center gap-4 pb-4">
+                <button class="filter-btn active px-10 py-4 rounded-full font-black text-sm transition-all shadow-md bg-navy-900 text-white" data-category="all">The Whole Menu</button>
+                <button class="filter-btn px-10 py-4 rounded-full font-black text-sm transition-all hover:bg-slate-50 border border-slate-100" data-category="starter">Global Appetizers</button>
+                <button class="filter-btn px-10 py-4 rounded-full font-black text-sm transition-all hover:bg-slate-50 border border-slate-100" data-category="biryani">Biryani Throne</button>
+                <button class="filter-btn px-10 py-4 rounded-full font-black text-sm transition-all hover:bg-slate-50 border border-slate-100" data-category="coastal">Coastal Treasures</button>
+                <button class="filter-btn px-10 py-4 rounded-full font-black text-sm transition-all hover:bg-slate-50 border border-slate-100" data-category="dessert">Liquid Treats</button>
+            </div>
+        </section>
+
+        <!-- Menu Grid -->
+        <section class="container mb-32">
+            <div id="roomGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <!-- Item 1: Potlam Biryani -->
+                <article class="room-card" data-category="biryani">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?auto=format&fit=crop&w=800&q=80" alt="Potlam Biryani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-brand-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Iconic Signature</div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Signature Potlam Biryani</h4>
+                                <span class="text-2xl font-black text-navy-900">₹450</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1 italic">"Our crown jewel. A fragrant bundle of aged basmati rice and marinated meat, wrapped in a fluffy omelette and slow-steamed."</p>
+                            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Non-Veg</span>
+                                </div>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-600">Serves 1-2</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 2: Honey Prawn -->
+                <article class="room-card" data-category="coastal">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80" alt="Honey Prawn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Coastal Honey Prawn</h4>
+                                <span class="text-2xl font-black text-navy-900">₹480</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1">Jumbo prawns from the Bay of Bengal, stir-fried with wildflower honey, toasted sesame, and a touch of black pepper.</p>
+                            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="text-[10px] font-black uppercase bg-slate-50 px-2 py-1 rounded">Chef's Choice</span>
+                                </div>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-600">Vizag Catch</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 3: Guntur Chicken -->
+                <article class="room-card" data-category="starter">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80" alt="Guntur Chicken" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 right-4 bg-red-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Extra Spicy</div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Guntur Chili Chicken</h4>
+                                <span class="text-2xl font-black text-navy-900">₹320</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1">The authentic Andhra heat. Succulent chicken morsels sautéed with sun-dried Guntur chilies and fresh curry leaves.</p>
+                            <div class="pt-6 border-t border-slate-100">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs">🌶️🌶️🌶️</span>
+                                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Andhra Heritage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 4: Dal Makhani -->
+                <article class="room-card" data-category="starter">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" alt="Dal Makhani" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Dal Makhani Heritage</h4>
+                                <span class="text-2xl font-black text-navy-900">₹320</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1">Whole black lentils slow-cooked overnight on traditional Tandoors, finished with white butter and fresh cream.</p>
+                            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Pure Veg</span>
+                                </div>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-600">Creamy Texture</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 5: Gulab Jamun -->
+                <article class="room-card" data-category="dessert">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1591244760773-61ce27a81232?auto=format&fit=crop&w=800&q=80" alt="Gulab Jamun" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Hot Jamun & Ice Cream</h4>
+                                <span class="text-2xl font-black text-navy-900">₹180</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1">Golden syrup-soaked khoya dumplings served piping hot with a scoop of premium Madagascar vanilla bean ice cream.</p>
+                            <div class="pt-6 border-t border-slate-100">
+                                <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Sweet Finale</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Item 6: Chocolate Shake -->
+                <article class="room-card" data-category="dessert">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=80" alt="Shake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <div class="flex justify-between items-start mb-4">
+                                <h4 class="text-2xl font-display font-extrabold group-hover:text-brand-600 transition-colors">Velvet Cocoa Shake</h4>
+                                <span class="text-2xl font-black text-navy-900">₹190</span>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-8 flex-1">A thick, indulgent blend of Belgian dark chocolate, rich milk, and hand-shaved cocoa flakes.</p>
+                            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                                <div class="flex gap-2">
+                                    <span class="text-[10px] font-black uppercase bg-slate-50 px-2 py-1 rounded">No Added Ice</span>
+                                </div>
+                                <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-600">Refreshing</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Room Service CTA -->
+        <section class="py-32 bg-navy-900 text-white text-center rounded-t-[100px] relative overflow-hidden">
+            <div class="absolute inset-0 bg-brand-600/10"></div>
+            <div class="container relative z-10">
+                <span class="text-[10px] font-black uppercase tracking-[0.5em] mb-4 inline-block text-brand-500">Exclusively for A1 Heaven Residents</span>
+                <h3 class="text-5xl md:text-7xl font-display font-black mb-8 leading-tight tracking-tighter">THE SUITE FEAST</h3>
+                <p class="text-slate-300 max-w-xl mx-auto mb-14 text-lg md:text-xl italic leading-relaxed opacity-80">"Experience the Kalinga magic in the privacy of your suite. Our full menu delivered in 30 minutes, 24/7."</p>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="tel:+918912500299" class="btn btn-accent px-12 py-5 rounded-full font-black text-lg shadow-2xl">Dial Extension 9</a>
+                    <a href="contact.html" class="btn btn-outline border-white/20 text-white hover:bg-white hover:text-navy-900 px-12 py-5 rounded-full font-black text-lg">Inquire Large Orders</a>
+                </div>
+            </div>
+            <!-- Decorative Elements -->
+            <div class="absolute -bottom-20 -left-20 w-80 h-80 bg-brand-600/20 rounded-full blur-[100px]"></div>
+            <div class="absolute -top-20 -right-20 w-80 h-80 bg-brand-600/20 rounded-full blur-[100px]"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 py-24">
+        <div class="container grid md:grid-cols-4 gap-16 border-b border-white/5 pb-20">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-3 mb-8">
+                    <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">A1</div>
+                    <h1 class="text-xl font-display font-bold text-white uppercase tracking-tighter">A1 HEAVEN</h1>
+                </div>
+                <p class="text-sm leading-relaxed mb-8">
+                    Vizag's premier choice for luxury stays and authentic ethnic dining. Experience hospitality that reaches for the stars.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all">FB</a>
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all">IG</a>
+                    <a href="#" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-600 hover:text-white transition-all">TW</a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-black mb-8 uppercase tracking-widest text-[10px]">Dining Categories</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li><a href="#" class="hover:text-brand-500 transition-colors">Specialty Potlam Biryani</a></li>
+                    <li><a href="#" class="hover:text-brand-500 transition-colors">Tandoori & Mughlai</a></li>
+                    <li><a href="#" class="hover:text-brand-500 transition-colors">Coastal Seafood Catch</a></li>
+                    <li><a href="#" class="hover:text-brand-500 transition-colors">Liquids & Shakes</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black mb-8 uppercase tracking-widest text-[10px]">Operational Hours</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li class="flex justify-between border-b border-white/5 pb-2"><span>Breakfast</span> <span class="text-white">07:00 - 10:30</span></li>
+                    <li class="flex justify-between border-b border-white/5 pb-2"><span>Lunch</span> <span class="text-white">12:30 - 15:30</span></li>
+                    <li class="flex justify-between border-b border-white/5 pb-2"><span>Dinner</span> <span class="text-white">19:00 - 23:00</span></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-black mb-8 uppercase tracking-widest text-[10px]">Contact Us</h4>
+                <p class="text-sm leading-relaxed mb-4">Health City, Arilova,<br>Visakhapatnam, AP 530040</p>
+                <p class="text-sm font-bold text-white mb-2">0891 2500299</p>
+                <p class="text-sm font-bold text-white">info@a1heaven.com</p>
+            </div>
+        </div>
+        <div class="container pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em]">
+            <p>© <span id="year"></span> A1 Heaven Visakhapatnam. Kalinga Restaurant.</p>
+            <p>Built with ❤️ by <span class="text-white">ECODRIX</span></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,415 +1,150 @@
-<!-- ===========================
-   blog.html (BLOG LIST)
-   =========================== -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Blog & Updates – Hotel Sai Leela, Kokar Ranchi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The A1 Journal | Luxury News from Visakhapatnam</title>
+    <meta name="description" content="Stay updated with the latest news from A1 Heaven and Kalinga Restaurant. From new menu launches to travel guides for Vizag.">
+    
+    <!-- CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --scrollbar-color-bg: #0f172a;
-        --muted-foreground: 226 100% 87%;
-      }
-
-      * {
-        scrollbar-width: thin;
-        scrollbar-color: hsl(var(--muted-foreground)) var(--scrollbar-color-bg);
-      }
-
-      *::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      *::-webkit-scrollbar-track {
-        background: var(--scrollbar-color-bg);
-      }
-
-      *::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #f59e0b, #fbbf24);
-        border-radius: 3px;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
-            },
-            colors: {
-              brand: {
-                50: "#ecfdf5",
-                100: "#d1fae5",
-                500: "#10b981",
-                600: "#059669",
-                700: "#047857",
-              },
-            },
-            boxShadow: {
-              soft: "0 18px 45px rgba(15,23,42,0.12)",
-            },
-          },
-        },
-      };
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: { 600: '#ea580c' },
+                        navy: { 900: '#0f172a' }
+                    }
+                }
+            }
+        }
     </script>
-  </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
-    <!-- HEADER (Blog active) -->
-    <header
-      class="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 lg:px-6 py-3 flex items-center justify-between"
-      >
-        <a href="index.html" class="flex items-center gap-2">
-          <span
-            class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white font-semibold shadow-soft"
-          >
-            SL
-          </span>
-          <div class="leading-tight">
-            <p class="font-semibold text-sm md:text-base tracking-tight">
-              Hotel Sai Leela
-            </p>
-            <p class="text-[11px] text-slate-500">
-              Kokar Ranchi · Near Railway Station
-            </p>
-          </div>
-        </a>
-
-        <button
-          id="mobileMenuBtn"
-          class="md:hidden inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm"
-        >
-          <span>Menu</span>
-          <svg
-            id="iconOpen"
-            class="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg
-            id="iconClose"
-            class="h-4 w-4 hidden"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <nav
-          id="navMenu"
-          class="hidden md:flex items-center gap-6 text-xs md:text-sm"
-        >
-          <a href="index.html" class="text-slate-600 hover:text-brand-600"
-            >Home</a
-          >
-          <a href="about.html" class="text-slate-600 hover:text-brand-600"
-            >About</a
-          >
-          <a href="rooms.html" class="text-slate-600 hover:text-brand-600"
-            >Rooms</a
-          >
-          <a href="blog.html" class="text-brand-600 font-semibold">Blog</a>
-          <a href="contact.html" class="text-slate-600 hover:text-brand-600"
-            >Contact</a
-          >
-          <a
-            href="contact.html"
-            class="ml-2 inline-flex items-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
-          >
-            Book Now
-          </a>
-        </nav>
-      </div>
-
-      <!-- Mobile -->
-      <div
-        id="mobileMenu"
-        class="md:hidden hidden border-t border-slate-100 bg-white/95 backdrop-blur"
-      >
-        <nav class="px-4 py-4 flex flex-col gap-3 text-sm">
-          <a href="index.html" class="text-slate-700 hover:text-brand-600"
-            >Home</a
-          >
-          <a href="about.html" class="text-slate-700 hover:text-brand-600"
-            >About</a
-          >
-          <a href="rooms.html" class="text-slate-700 hover:text-brand-600"
-            >Rooms</a
-          >
-          <a href="blog.html" class="text-brand-600 font-semibold">Blog</a>
-          <a href="contact.html" class="text-slate-700 hover:text-brand-600"
-            >Contact</a
-          >
-          <a
-            href="contact.html"
-            class="mt-1 inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
-          >
-            Book Now
-          </a>
-        </nav>
-      </div>
+</head>
+<body class="bg-white text-navy-900 font-sans antialiased">
+    <!-- Navbar (Consistent) -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl uppercase tracking-tighter shadow-lg transition-transform hover:scale-110">A1</div>
+                <div>
+                    <h1 class="text-lg font-display font-bold uppercase tracking-tight">A1 HEAVEN</h1>
+                    <p class="text-[10px] text-muted-foreground uppercase font-black tracking-widest">Luxury · Vizag</p>
+                </div>
+            </a>
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="restaurant.html" class="nav-link">Kalinga Restaurant</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="btn btn-accent px-6">Book Now</a>
+            </nav>
+            <button id="mobileMenuBtn" class="lg:hidden p-2"><svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7" stroke-width="2" stroke-linecap="round"/></svg></button>
+        </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="pt-24 md:pt-28 pb-16 max-w-6xl mx-auto px-4 lg:px-6">
-      <!-- Intro + filter hint -->
-      <section class="mb-10">
-        <p class="text-xs font-semibold text-brand-600 uppercase tracking-wide">
-          Blog & Updates
-        </p>
-        <h1 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
-          Travel tips, hotel updates & offers.
-        </h1>
-        <p class="mt-3 text-sm md:text-base text-slate-600 max-w-2xl">
-          Short, practical posts to help you plan your Kokar Ranchi trip better,
-          understand our facilities, and see current offers before you book.
-        </p>
-      </section>
+    <main class="pt-32">
+        <section class="container mb-32 text-center reveal">
+            <span class="text-brand-600 font-black tracking-[0.4em] uppercase text-xs mb-4 inline-block">The A1 Journal</span>
+            <h2 class="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-12 italic">Celestial <br> <span class="text-brand-500">Insights</span>.</h2>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto italic font-medium">"Your guide to the best of Vizag hospitality, culinary heritage, and celestial comfort."</p>
+        </section>
 
-      <!-- Sections: Featured + All posts -->
-      <section class="grid md:grid-cols-[1.4fr,1fr] gap-8 mb-12">
-        <!-- Featured post (bigger card) -->
-        <article
-          class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden flex flex-col md:flex-row"
-        >
-          <div
-            class="h-40 md:h-auto md:w-1/3 bg-[url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"
-          ></div>
-          <div class="p-5 md:p-6 text-sm flex-1 flex flex-col gap-2">
-            <p class="text-[11px] text-slate-500 uppercase tracking-wide">
-              Travel guide · Jan 2026
-            </p>
-            <h2 class="font-semibold text-base md:text-lg text-slate-900">
-              7 simple tips to plan your Kokar Ranchi darshan without
-              last‑minute rush.
-            </h2>
-            <p class="text-xs md:text-sm text-slate-600">
-              A quick checklist on tickets, timings, travel and stay, written
-              from what we see guests commonly face when they arrive in the
-              city.
-            </p>
-            <p class="mt-1 text-[11px] text-slate-500">Approx. 4 min read</p>
-          </div>
-        </article>
+        <!-- Blog Grid -->
+        <section class="container mb-32">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                
+                <!-- Article 1: Potlam Biryani Story -->
+                <article class="reveal">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=800&q=80" alt="Biryani Story" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-navy-900 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Culinary Heritage</div>
+                        </div>
+                        <div class="p-10 flex-1 flex flex-col">
+                            <div class="mb-6">
+                                <span class="text-[10px] font-black text-brand-600 uppercase tracking-widest">Feb 13, 2026</span>
+                                <h4 class="text-3xl font-display font-black mt-2 leading-tight uppercase group-hover:text-brand-600 transition-colors">The Secret Behind Our Iconic Potlam Biryani</h4>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-1 italic">Discover how we keep the traditional Vizag flavors alive in every pack. It's more than just a meal; it's a heritage wrapped in an omelette.</p>
+                            <a href="#" class="text-[10px] font-black uppercase tracking-[0.4em] text-navy-900 hover:text-brand-600 transition-colors">Read Full Story →</a>
+                        </div>
+                    </div>
+                </article>
 
-        <!-- Small side list: categories (static text for now) -->
-        <aside
-          class="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 text-sm"
-        >
-          <h3 class="font-semibold text-slate-900 mb-2">
-            Types of posts you’ll see
-          </h3>
-          <ul class="space-y-1 text-slate-600 text-xs">
-            <li>• Travel tips & things to know before visiting Kokar Ranchi</li>
-            <li>• Hotel updates, renovations and new facilities</li>
-            <li>• Seasonal offers for families & corporate guests</li>
-            <li>• Small guides on nearby spots and food places</li>
-          </ul>
-          <p class="mt-3 text-[11px] text-slate-500">
-            In your live site, this section can be powered from your admin or
-            CMS, so you can add or edit posts anytime.
-          </p>
-        </aside>
-      </section>
+                <!-- Article 2: Health City Guide -->
+                <article class="reveal" style="animation-delay: 0.1s">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Health City Guide" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-navy-900 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Travel Guide</div>
+                        </div>
+                        <div class="p-10 flex-1 flex flex-col">
+                            <div class="mb-6">
+                                <span class="text-[10px] font-black text-brand-600 uppercase tracking-widest">Jan 28, 2026</span>
+                                <h4 class="text-3xl font-display font-black mt-2 leading-tight uppercase group-hover:text-brand-600 transition-colors">A Local Guide to Health City Arilova</h4>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-1 italic">Everything you need to know about the premier medical facilities in Visakhapatnam while staying at A1 Heaven.</p>
+                            <a href="#" class="text-[10px] font-black uppercase tracking-[0.4em] text-navy-900 hover:text-brand-600 transition-colors">Read Full Story →</a>
+                        </div>
+                    </div>
+                </article>
 
-      <!-- Blog grid (8 posts) -->
-      <section>
-        <h2 class="text-sm font-semibold text-slate-800 mb-3">
-          Latest posts (demo content)
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6 text-sm">
-          <!-- 1 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Travel · Jan 2026</p>
-            <h3 class="font-semibold text-sm">
-              5 places to visit within 30 minutes of Hotel Sai Leela.
-            </h3>
-            <p class="text-xs text-slate-600">
-              Nearby temples, markets and viewpoints that guests usually like to
-              cover in a short trip.
-            </p>
-          </article>
+                <!-- Article 3: Best Time to Visit -->
+                <article class="reveal" style="animation-delay: 0.2s">
+                    <div class="card-premium group">
+                        <div class="h-64 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=800&q=80" alt="Vizag Guide" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-navy-900 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Tourism</div>
+                        </div>
+                        <div class="p-10 flex-1 flex flex-col">
+                            <div class="mb-6">
+                                <span class="text-[10px] font-black text-brand-600 uppercase tracking-widest">Jan 15, 2026</span>
+                                <h4 class="text-3xl font-display font-black mt-2 leading-tight uppercase group-hover:text-brand-600 transition-colors">Best Time to Visit the City of Destiny</h4>
+                            </div>
+                            <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-1 italic">When to enjoy the beaches of Vizag and the comforts of A1 Heaven to the fullest.</p>
+                            <a href="#" class="text-[10px] font-black uppercase tracking-[0.4em] text-navy-900 hover:text-brand-600 transition-colors">Read Full Story →</a>
+                        </div>
+                    </div>
+                </article>
 
-          <!-- 2 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Offers · Ongoing</p>
-            <h3 class="font-semibold text-sm">
-              Weekday corporate stay offer for teams & field staff.
-            </h3>
-            <p class="text-xs text-slate-600">
-              Simple fixed‑rate plan for companies booking rooms on a regular
-              basis on weekdays.
-            </p>
-          </article>
+            </div>
+        </section>
 
-          <!-- 3 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Hotel updates</p>
-            <h3 class="font-semibold text-sm">
-              Newly painted rooms and upgraded linens for all categories.
-            </h3>
-            <p class="text-xs text-slate-600">
-              A small note about the recent refresh we did to improve overall
-              comfort and feel.
-            </p>
-          </article>
-
-          <!-- 4 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Travel tips</p>
-            <h3 class="font-semibold text-sm">
-              What to carry for a 2‑day Kokar Ranchi trip (checklist).
-            </h3>
-            <p class="text-xs text-slate-600">
-              Simple packing list for families and first‑time visitors, so you
-              don’t miss basic essentials.
-            </p>
-          </article>
-
-          <!-- 5 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Food · Nearby</p>
-            <h3 class="font-semibold text-sm">
-              Popular breakfast & tiffin spots near Sai Leela.
-            </h3>
-            <p class="text-xs text-slate-600">
-              Handful of nearby places guests often ask us about for idli, dosa
-              and quick coffee.
-            </p>
-          </article>
-
-          <!-- 6 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">FAQ</p>
-            <h3 class="font-semibold text-sm">
-              Early check‑in, late check‑out and luggage storage.
-            </h3>
-            <p class="text-xs text-slate-600">
-              How we usually handle timing requests for guests arriving late
-              night or early morning.
-            </p>
-          </article>
-
-          <!-- 7 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Group stays</p>
-            <h3 class="font-semibold text-sm">
-              Tips for planning a small group stay (3–6 rooms).
-            </h3>
-            <p class="text-xs text-slate-600">
-              Basic planning checklist for families travelling together or small
-              team visits.
-            </p>
-          </article>
-
-          <!-- 8 -->
-          <article
-            class="bg-white border border-slate-100 rounded-2xl p-4 space-y-2"
-          >
-            <p class="text-xs text-slate-500">Festive season</p>
-            <h3 class="font-semibold text-sm">
-              How festival days affect room availability & tariff.
-            </h3>
-            <p class="text-xs text-slate-600">
-              A quick explanation of why rates and availability change during
-              peak dates and how to plan ahead.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- CTA strip -->
-      <section
-        class="mt-10 bg-slate-900 rounded-2xl text-slate-100 p-5 md:p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-sm"
-      >
-        <div>
-          <h2 class="font-semibold text-base">
-            Want updates on WhatsApp instead of checking the blog?
-          </h2>
-          <p class="mt-1 text-slate-300">
-            Send us a quick “Hi” and we’ll share important changes like new
-            offers or timing updates whenever useful.
-          </p>
-        </div>
-        <a
-          href="https://wa.me/911234567890?text=Hi%20Hotel%20Sai%20Leela%2C%20please%20share%20important%20updates%20with%20me."
-          class="px-4 py-2 rounded-full bg-brand-600 text-white font-semibold hover:bg-brand-700 transition"
-        >
-          WhatsApp Updates
-        </a>
-      </section>
+        <!-- Newsletter Section -->
+        <section class="container py-32 reveal">
+            <div class="bg-brand-600 rounded-[80px] p-20 text-center text-white relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h3 class="text-4xl md:text-6xl font-display font-black mb-8 leading-none uppercase tracking-tighter">Stay In the <span class="italic text-navy-900">Circle</span></h3>
+                    <p class="text-xl mb-12 italic opacity-80">"Get exclusive offers and recipes from Kalinga direct to your inbox."</p>
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Email identity" class="bg-white/20 border-white/30 text-white px-8 py-5 rounded-full w-full outline-none placeholder:text-white/50 focus:bg-white/30">
+                        <button class="btn bg-navy-900 text-white px-12 py-5 shadow-2xl hover:scale-105 transition-transform">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-300 text-xs md:text-sm">
-      <div
-        class="max-w-6xl mx-auto px-4 lg:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-2"
-      >
-        <p>© <span id="year"></span> Hotel Sai Leela. All rights reserved.</p>
-        <p class="text-[11px] text-slate-500">
-          Website demo design by
-          <span class="font-semibold text-slate-300">ECODRIX</span>.
-        </p>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 py-24">
+        <div class="container text-center">
+            <div class="flex items-center justify-center gap-3 mb-12">
+                <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">A1</div>
+                <h1 class="text-2xl font-display font-bold text-white uppercase tracking-tighter">A1 HEAVEN</h1>
+            </div>
+            <p class="text-[10px] font-black uppercase tracking-[0.2em]">© <span id="year"></span> A1 Heaven Visakhapatnam. The Journal Desk.</p>
+            <p class="mt-4 text-[10px] opacity-20">Digital Core by ECODRIX</p>
+        </div>
     </footer>
 
-    <script>
-      // Mobile nav
-      const btn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const iconOpen = document.getElementById("iconOpen");
-      const iconClose = document.getElementById("iconClose");
-
-      if (btn && mobileMenu) {
-        btn.addEventListener("click", () => {
-          const isOpen = !mobileMenu.classList.contains("hidden");
-          mobileMenu.classList.toggle("hidden");
-          iconOpen.classList.toggle("hidden", isOpen);
-          iconClose.classList.toggle("hidden", !isOpen);
-        });
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            iconOpen.classList.remove("hidden");
-            iconClose.classList.add("hidden");
-          });
-        });
-      }
-
-      // Year
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+    <script src="js/main.js"></script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
 </html>

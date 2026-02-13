@@ -1,414 +1,199 @@
-<!-- ===========================
-   contact.html (CONTACT)
-   =========================== -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Contact & Location – Hotel Sai Leela, Kokar Ranchi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | A1 Heaven Visakhapatnam</title>
+    <meta name="description" content="Reach out to A1 Heaven Hotel in Arilova, Visakhapatnam. For bookings, events at Kalinga Restaurant, or general inquiries, we are here to help 24/7.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="css/style.css">
+    
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "system-ui", "sans-serif"],
-            },
-            colors: {
-              brand: {
-                50: "#ecfdf5",
-                100: "#d1fae5",
-                500: "#10b981",
-                600: "#059669",
-                700: "#047857",
-              },
-            },
-            boxShadow: {
-              soft: "0 18px 45px rgba(15,23,42,0.12)",
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      :root {
-        --scrollbar-color-bg: #0f172a;
-        --muted-foreground: 226 100% 87%;
-      }
-
-      * {
-        scrollbar-width: thin;
-        scrollbar-color: hsl(var(--muted-foreground)) var(--scrollbar-color-bg);
-      }
-
-      *::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      *::-webkit-scrollbar-track {
-        background: var(--scrollbar-color-bg);
-      }
-
-      *::-webkit-scrollbar-thumb {
-        background: linear-gradient(to bottom, #f59e0b, #fbbf24);
-        border-radius: 3px;
-      }
-
-      .contact-detail-section {
-        display: grid;
-        gap: 1rem;
-      }
-      @media (min-width: 480px) {
-        .contact-detail-section {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            500: '#ea580c',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        navy: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                        }
+                    }
+                }
+            }
         }
-      }
-    </style>
-  </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased">
-    <!-- HEADER (Contact active) -->
-    <header
-      class="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100"
-    >
-      <div
-        class="max-w-6xl mx-auto px-4 lg:px-6 py-3 flex items-center justify-between"
-      >
-        <a href="index.html" class="flex items-center gap-2">
-          <span
-            class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 text-white font-semibold shadow-soft"
-          >
-            SL
-          </span>
-          <div class="leading-tight">
-            <p class="font-semibold text-sm md:text-base tracking-tight">
-              Hotel Sai Leela
-            </p>
-            <p class="text-[11px] text-slate-500">
-              Kokar Ranchi · Near Railway Station
-            </p>
-          </div>
-        </a>
+    </script>
+</head>
+<body class="bg-white text-navy-900 font-sans antialiased">
 
-        <button
-          id="mobileMenuBtn"
-          class="md:hidden inline-flex items-center gap-1 rounded-full border border-slate-200 px-3 py-1.5 text-xs font-medium text-slate-700 shadow-sm"
-        >
-          <span>Menu</span>
-          <svg
-            id="iconOpen"
-            class="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg
-            id="iconClose"
-            class="h-4 w-4 hidden"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg transition-transform group-hover:scale-110">A1</div>
+                <div>
+                    <h1 class="text-lg font-display font-bold leading-none uppercase tracking-tight">A1 HEAVEN</h1>
+                    <p class="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Luxury · Vizag</p>
+                </div>
+            </a>
 
-        <nav
-          id="navMenu"
-          class="hidden md:flex items-center gap-6 text-xs md:text-sm"
-        >
-          <a href="index.html" class="text-slate-600 hover:text-brand-600"
-            >Home</a
-          >
-          <a href="about.html" class="text-slate-600 hover:text-brand-600"
-            >About</a
-          >
-          <a href="rooms.html" class="text-slate-600 hover:text-brand-600"
-            >Rooms</a
-          >
-          <a href="blog.html" class="text-slate-600 hover:text-brand-600"
-            >Blog</a
-          >
-          <a href="contact.html" class="text-brand-600 font-semibold"
-            >Contact</a
-          >
-          <a
-            href="contact.html"
-            class="ml-2 inline-flex items-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
-          >
-            Book Now
-          </a>
-        </nav>
-      </div>
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="rooms.html" class="nav-link">Rooms</a>
+                <a href="restaurant.html" class="nav-link">Kalinga Restaurant</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="btn btn-accent translate-x-4">Book Reservation</a>
+            </nav>
 
-      <!-- Mobile -->
-      <div
-        id="mobileMenu"
-        class="md:hidden hidden border-t border-slate-100 bg-white/95 backdrop-blur"
-      >
-        <nav class="px-4 py-4 flex flex-col gap-3 text-sm">
-          <a href="index.html" class="text-slate-700 hover:text-brand-600"
-            >Home</a
-          >
-          <a href="about.html" class="text-slate-700 hover:text-brand-600"
-            >About</a
-          >
-          <a href="rooms.html" class="text-slate-700 hover:text-brand-600"
-            >Rooms</a
-          >
-          <a href="blog.html" class="text-slate-700 hover:text-brand-600"
-            >Blog</a
-          >
-          <a href="contact.html" class="text-brand-600 font-semibold"
-            >Contact</a
-          >
-          <a
-            href="contact.html"
-            class="mt-1 inline-flex items-center justify-center rounded-full bg-brand-600 px-4 py-2 text-xs font-semibold text-white shadow-sm hover:bg-brand-700 transition"
-          >
-            Book Now
-          </a>
-        </nav>
-      </div>
+            <button id="mobileMenuBtn" class="lg:hidden p-2 text-navy-900 hover:bg-slate-100 rounded-full">
+                <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-white border-b border-border p-6 flex-col gap-4 md:hidden shadow-xl">
+            <a href="index.html" class="text-lg font-bold py-2 border-b border-slate-50">Home</a>
+            <a href="rooms.html" class="text-lg font-bold py-2 border-b border-slate-50">Rooms</a>
+            <a href="restaurant.html" class="text-lg font-bold py-2 border-b border-slate-50">Restaurant</a>
+            <a href="about.html" class="text-lg font-bold py-2 border-b border-slate-50">About</a>
+            <a href="contact.html" class="btn btn-accent w-full mt-4">Inquire Booking</a>
+        </div>
     </header>
 
-    <!-- MAIN -->
-    <main class="pt-24 md:pt-28 pb-16 max-w-6xl mx-auto px-4 lg:px-6">
-      <!-- Intro -->
-      <section class="mb-8">
-        <p class="text-xs font-semibold text-brand-600 uppercase tracking-wide">
-          Contact & Location
-        </p>
-        <h1 class="mt-2 text-3xl md:text-4xl font-semibold tracking-tight">
-          Reach out before you travel.
-        </h1>
-        <p class="mt-3 text-sm md:text-base text-slate-600 max-w-2xl">
-          Call, WhatsApp or send a quick enquiry form. In a live system, this
-          page can connect directly to your CRM or WhatsApp API, so all leads
-          are tracked in one place.
-        </p>
-      </section>
+    <main class="pt-32">
+        <section class="container pb-32">
+            <div class="grid lg:grid-cols-2 gap-20 items-stretch">
+                <!-- Info Section -->
+                <div class="animate-fade-in-up">
+                    <span class="text-brand-600 font-black uppercase tracking-[0.4em] text-xs mb-4 inline-block">Direct Connection</span>
+                    <h2 class="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-12">Reach <br> <span class="text-brand-500 italic">Heaven</span>.</h2>
+                    
+                    <div class="space-y-12">
+                        <div class="flex gap-8 group">
+                            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-brand-600 group-hover:text-white transition-all transform group-hover:rotate-12">📍</div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase tracking-widest text-[10px] text-slate-400 mb-2">The Address</h4>
+                                <p class="text-xl font-bold leading-relaxed">Health City, Arilova, Visakhapatnam,<br>Andhra Pradesh 530040</p>
+                            </div>
+                        </div>
 
-      <!-- Contact + Form -->
-      <section class="grid md:grid-cols-2 gap-8 text-sm">
-        <!-- Left: details -->
-        <div class="space-y-5">
-          <div>
-            <h2 class="font-semibold text-lg mb-1">Hotel Sai Leela</h2>
-            <p class="text-slate-700">
-              Example address line 1,<br />
-              Near main market / landmark,<br />
-              Kokar Ranchi – PIN (demo).
-            </p>
-          </div>
+                        <div class="flex gap-8 group">
+                            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-brand-600 group-hover:text-white transition-all transform group-hover:-rotate-12">📞</div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase tracking-widest text-[10px] text-slate-400 mb-2">24/7 Concierge</h4>
+                                <p class="text-xl font-bold">0891 2500299</p>
+                                <p class="text-lg text-slate-500 font-medium">+91 94408 07172</p>
+                            </div>
+                        </div>
 
-          <div class="contact-detail-section gap-4">
-            <div>
-              <h3 class="font-semibold mb-1">Contact</h3>
-              <p class="text-slate-700">Phone: +91‑12345‑67890</p>
-              <p class="text-slate-700">Email: info@saileelahotel.com</p>
-            </div>
-            <div>
-              <h3 class="font-semibold mb-1">Front desk timing</h3>
-              <p class="text-slate-700 text-xs">Reception open 24×7 (demo).</p>
-              <p class="text-slate-700 text-xs">
-                WhatsApp replies usually within 15–30 minutes (day time).
-              </p>
-            </div>
-          </div>
+                        <div class="flex gap-8 group">
+                            <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl group-hover:bg-brand-600 group-hover:text-white transition-all transform group-hover:rotate-6">✉️</div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase tracking-widest text-[10px] text-slate-400 mb-2">Email Inquiries</h4>
+                                <p class="text-xl font-bold">info@a1heaven.com</p>
+                                <p class="text-lg text-slate-500 font-medium">reservations@a1heaven.com</p>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="flex flex-wrap gap-3">
-            <a
-              href="https://wa.me/911234567890?text=Hi%2C%20I%20want%20to%20enquire%20about%20room%20availability%20at%20Hotel%20Sai%20Leela"
-              class="px-4 py-2 rounded-full bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition"
-            >
-              WhatsApp Enquiry
-            </a>
-            <a
-              href="tel:+911234567890"
-              class="px-4 py-2 rounded-full border border-slate-300 text-xs font-semibold hover:border-brand-500 hover:text-brand-700 transition"
-            >
-              Call Now
-            </a>
-          </div>
+                    <!-- Socials -->
+                    <div class="mt-20 flex gap-6">
+                        <a href="#" class="btn btn-outline px-8 rounded-2xl font-black text-xs uppercase tracking-widest">WhatsApp Chat</a>
+                        <a href="#" class="btn btn-outline px-8 rounded-2xl font-black text-xs uppercase tracking-widest">Instagram</a>
+                    </div>
+                </div>
 
-          <!-- Map teaser -->
-          <div class="mt-4">
-            <h3 class="font-semibold mb-2">Location preview</h3>
-            <div
-              class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-100"
-            >
-              <div
-                class="h-40 bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80')] bg-cover bg-center"
-              ></div>
-              <div
-                class="px-3 py-2 flex items-center justify-between text-[11px]"
-              >
-                <p class="text-slate-600">
-                  Map/image placeholder. Replace with Google Map embed or real
-                  photo later.
-                </p>
-                <a
-                  href="#"
-                  class="text-brand-600 font-semibold hover:text-brand-700"
-                  >Open in Maps →</a
-                >
-              </div>
+                <!-- Form Section -->
+                <div class="bg-navy-900 rounded-[60px] p-12 md:p-16 text-white shadow-premium relative overflow-hidden reveal">
+                    <div class="relative z-10">
+                        <h3 class="text-4xl font-display font-black mb-8 uppercase tracking-tighter">Inquiry Form</h3>
+                        <p class="text-slate-400 mb-12 font-medium italic">"Leave a message, and our reception team will get back to you within 30 minutes."</p>
+                        
+                        <form id="contactForm" class="space-y-8">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="form-group mb-0">
+                                    <label class="form-label text-white/50">Full identity</label>
+                                    <input type="text" class="form-control bg-navy-800 border-white/5 text-white focus:ring-brand-500" placeholder="e.g. Rahul Sharma" required>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <label class="form-label text-white/50">Mobile Number</label>
+                                    <input type="tel" class="form-control bg-navy-800 border-white/5 text-white focus:ring-brand-500" placeholder="+91 00000 00000" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label text-white/50">What are you looking for?</label>
+                                <select class="form-control bg-navy-800 border-white/5 text-white focus:ring-brand-500 appearance-none">
+                                    <option>Room Reservation</option>
+                                    <option>Restaurant Table (Kalinga)</option>
+                                    <option>Banquet/Event Booking</option>
+                                    <option>Corporate Inquiry</option>
+                                    <option>General Support</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label text-white/50">Detailed Message</label>
+                                <textarea rows="4" class="form-control bg-navy-800 border-white/5 text-white focus:ring-brand-500" placeholder="How can we make your stay celestial?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-accent w-full py-6 rounded-3xl text-xl font-black uppercase tracking-widest shadow-2xl hover:scale-[1.02] transition-transform">Send Celestial Signal</button>
+                        </form>
+                    </div>
+                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <!-- Right: form -->
-        <div class="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm">
-          <h2 class="font-semibold mb-1 text-slate-900">
-            Quick enquiry form (demo)
-          </h2>
-          <p class="text-[11px] text-slate-500 mb-3">
-            This form will not send anywhere right now. In production, you can
-            connect it to email, CRM or WhatsApp automation.
-          </p>
-          <form class="space-y-3 text-sm">
-            <div>
-              <label class="block text-xs font-semibold mb-1">Name</label>
-              <input
-                type="text"
-                class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                placeholder="Your full name"
-              />
+        <!-- Map Section -->
+        <section class="container mb-32">
+            <div class="rounded-[80px] overflow-hidden shadow-premium h-[500px] border-8 border-slate-50 reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.082574044158!2d83.33647467571746!3d17.76510349182361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a395bd7379d713f%3A0xe4a26e831628d02e!2sHealth%20City%2C%20Arilova%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530040!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs font-semibold mb-1">Phone</label>
-                <input
-                  type="tel"
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                  placeholder="Mobile number"
-                />
-              </div>
-              <div>
-                <label class="block text-xs font-semibold mb-1">Email</label>
-                <input
-                  type="email"
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                  placeholder="Optional"
-                />
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs font-semibold mb-1"
-                  >Check‑in date</label
-                >
-                <input
-                  type="date"
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                />
-              </div>
-              <div>
-                <label class="block text-xs font-semibold mb-1"
-                  >Check‑out date</label
-                >
-                <input
-                  type="date"
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                />
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div>
-                <label class="block text-xs font-semibold mb-1">Guests</label>
-                <input
-                  type="number"
-                  min="1"
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                  placeholder="2"
-                />
-              </div>
-              <div>
-                <label class="block text-xs font-semibold mb-1"
-                  >Room preference</label
-                >
-                <select
-                  class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500 bg-white"
-                >
-                  <option>Any</option>
-                  <option>Deluxe AC</option>
-                  <option>Family Room</option>
-                  <option>Economy Non‑AC</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold mb-1">Message</label>
-              <textarea
-                class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500"
-                rows="3"
-                placeholder="Any specific timing, parking, or other request?"
-              ></textarea>
-            </div>
-            <button
-              type="button"
-              class="w-full mt-2 px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition"
-            >
-              Submit Enquiry (Demo)
-            </button>
-            <p class="mt-2 text-[11px] text-slate-500">
-              By submitting, you agree that our team can contact you on phone or
-              WhatsApp about this enquiry only.
-            </p>
-          </form>
-        </div>
-      </section>
+        </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-300 text-xs md:text-sm">
-      <div
-        class="max-w-6xl mx-auto px-4 lg:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-2"
-      >
-        <p>© <span id="year"></span> Hotel Sai Leela. All rights reserved.</p>
-        <p class="text-[11px] text-slate-500">
-          Website demo design by
-          <span class="font-semibold text-slate-300">ECODRIX</span>.
-        </p>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-400 py-24">
+        <div class="container text-center">
+            <div class="flex items-center justify-center gap-3 mb-12">
+                <div class="h-10 w-10 bg-brand-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">A1</div>
+                <h1 class="text-2xl font-display font-bold text-white uppercase tracking-tighter">A1 HEAVEN</h1>
+            </div>
+            <p class="max-w-xl mx-auto mb-16 text-sm italic">"Providing celestial hospitality in the heart of Vizag since our inception. Your satisfaction is our eternal mission."</p>
+            <div class="flex justify-center gap-12 font-black uppercase tracking-[0.2em] text-[10px]">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="rooms.html" class="hover:text-white transition-colors">Rooms</a>
+                <a href="restaurant.html" class="hover:text-white transition-colors">Dining</a>
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+            </div>
+            <div class="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em]">
+                <p>© <span id="year"></span> A1 Heaven Visakhapatnam. Concierge Desk.</p>
+                <p>Digital Core by <span class="text-white font-black">ECODRIX</span></p>
+            </div>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script>
-      // Mobile nav
-      const btn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const iconOpen = document.getElementById("iconOpen");
-      const iconClose = document.getElementById("iconClose");
-
-      if (btn && mobileMenu) {
-        btn.addEventListener("click", () => {
-          const isOpen = !mobileMenu.classList.contains("hidden");
-          mobileMenu.classList.toggle("hidden");
-          iconOpen.classList.toggle("hidden", isOpen);
-          iconClose.classList.toggle("hidden", !isOpen);
-        });
-        mobileMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            iconOpen.classList.remove("hidden");
-            iconClose.classList.add("hidden");
-          });
-        });
-      }
-
-      // Year
-      document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-  </body>
+</body>
 </html>
